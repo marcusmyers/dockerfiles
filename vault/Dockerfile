@@ -2,6 +2,8 @@ FROM alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 RUN apk add --update unzip \
+      bash \
+      ca-certificates \
     && rm -rf /var/cache/apk/*
 
 ADD https://releases.hashicorp.com/vault/0.6.0/vault_0.6.0_linux_amd64.zip /tmp
@@ -15,5 +17,5 @@ EXPOSE 8200
 
 VOLUME ["/etc/vault"]
 
-ENTRYPOINT ["vault"]
+ENTRYPOINT ["/usr/local/bin/vault"]
 CMD ["server"]
