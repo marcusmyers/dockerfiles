@@ -1,4 +1,5 @@
 FROM alpine
+MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 RUN apk add --update unzip \
     && rm -rf /var/cache/apk/*
