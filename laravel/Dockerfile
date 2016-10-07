@@ -11,5 +11,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
   && php -r "unlink('composer-setup.php');"
 
+RUN docker-php-ext-install gd mbstring mysqli pdo pdo_mysql mcrypt
+
 RUN mkdir /app
 WORKDIR /app
