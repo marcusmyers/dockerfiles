@@ -1,4 +1,4 @@
-FROM php:7.0.9-alpine
+FROM php:7.1-alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 RUN apk add --update tzdata \
