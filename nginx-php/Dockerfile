@@ -29,7 +29,7 @@ RUN apt-get -qq update && \
   apt-get -q clean && \
   rm -rf /var/lib/apt/list/*
 
-RUN mkdir /app /run/app /src && cd /src && \
+RUN mkdir /app /run/php /src && cd /src && \
   curl -L -o /src/nginx.tar.gz http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz && \
   tar -xvf nginx.tar.gz && \
   cd nginx-${NGINX_VERSION} && \

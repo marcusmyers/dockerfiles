@@ -18,7 +18,7 @@ server {
   rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 
   # Rewrite /status route to /status.php file.
-  rewrite /status$ /status.php last
+  rewrite /status$ /status.php last;
 
   <% if ENV['SSL_FLAG'] == "on" %>
   # redirect all requests to ssl
