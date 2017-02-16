@@ -1,0 +1,86 @@
+server {
+  listen 80 default_server;
+  server_name _;
+  server_tokens off;
+  root /app/web/;
+
+  set_real_ip_from 172.16.0.0/12;
+  set_real_ip_from 10.0.0.0/8;
+  real_ip_header X-Real-IP;
+
+  index index.php;
+
+  location / {
+    try_files $uri $uri/ /index.php?$args;
+  }
+
+  # Add trailing slash to */wp-admin requests.
+  rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+  # Rewrite /status route to /status.php file.
+  rewrite /status$ /status.php last
+
+  <% if ENV['SSL_FLAG'] == "on" %>
+  # redirect all requests to ssl
+  rewrite  ^/(.*)$  https://$host/$1 permanent;
+  <% end %>
+
+  location ~ \.php$ {
+    try_files $uri =404;
+
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    include fastcgi_params;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+  }
+
+  # Deny access to any files with a .php extension in the uploads directory
+  # Works in sub-directory installs and also in multisite network
+  location ~* /(?:uploads|files)/.*\.php$ {
+    deny all;
+  }
+}
+
+<% if ENV['SSL_FLAG'] == "on" %>
+server {
+  listen 443 default_server;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  ssl <%= ENV['SSL_FLAG'] %>;
+  ssl_certificate <%= ENV['SSL_CERT'] %>;
+  ssl_certificate_key <%= ENV['SSL_CERT_KEY'] %>;
+
+  server_name _;
+  server_tokens off;
+  root /app/web/;
+
+  set_real_ip_from 172.16.0.0/12;
+  set_real_ip_from 10.0.0.0/8;
+  real_ip_header X-Real-IP;
+
+  index index.php;
+
+  location / {
+    try_files $uri $uri/ /index.php?$args;
+  }
+
+  # Rewrite /status route to /status.php file.
+  rewrite /status$ /status.php last;
+
+  location ~ \.php$ {
+    try_files $uri =404;
+
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    include fastcgi_params;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+  }
+
+  # Deny access to any files with a .php extension in the uploads directory
+  # Works in sub-directory installs and also in multisite network
+  location ~* /(?:uploads|files)/.*\.php$ {
+    deny all;
+  }
+}
+<% end %>
