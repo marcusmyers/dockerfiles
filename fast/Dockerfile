@@ -7,4 +7,6 @@ RUN apk add --update curl \
 RUN curl -L https://github.com/ddo/fast/releases/download/v0.0.1/fast_linux_386 -o /usr/local/bin/fast \
     && chmod a+x /usr/local/bin/fast
 
-CMD [ "/usr/local/bin/fast" ]
+LABEL io.whalebrew.name 'fast'
+
+ENTRYPOINT [ "/usr/local/bin/fast" ]
