@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+
+require "erb"
+
+config = ERB.new(File.read("/etc/nginx/default.conf.erb")).result
+File.open("/etc/nginx/conf.d/default.conf", "w") { |f| f.write(config) }
+
+exec "/opt/nginx-#{ENV['NGINX_VERSION']}/sbin/nginx"
