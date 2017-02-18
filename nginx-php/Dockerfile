@@ -19,6 +19,7 @@ RUN apt-get -qq update && \
     php-fpm \
     php-mysql \
     php-json \
+    php-curl \
     php-gd \
     mysql-client \
     libssl-dev \
