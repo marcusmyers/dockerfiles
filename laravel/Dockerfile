@@ -1,7 +1,7 @@
 FROM php:7.1-alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
-RUN apk add --update tzdata \
+RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-dev \
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
   && echo "America/New_York" >  /etc/timezone \
   && apk del tzdata \
