@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.5
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 RUN apk add --update curl \
       ca-certificates \
