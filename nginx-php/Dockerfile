@@ -4,7 +4,10 @@ MAINTAINER marcusmyers <marcusmyers@gmail.com>
 ENV PHP_CONF=/etc/php/7.0/fpm/php.ini \
     FPM_CONF=/etc/php/7.0/fpm/php-fpm.conf \
     FPM_POOL=/etc/php/7.0/fpm/pool.d/www.conf \
-    NGINX_VERSION=1.10.2
+    NGINX_VERSION=1.10.2 \
+    COMPOSER_VERSION=1.4.1
+
+ADD https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar /usr/local/bin/
 
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/default.conf.erb /etc/nginx/default.conf.erb
@@ -28,6 +31,7 @@ RUN apt-get -qq update && \
     ruby \
     supervisor && \
   apt-get -q clean && \
+  mv /usr/local/bin/composer.phar /usr/local/bin/composer && \
   rm -rf /var/lib/apt/list/*
 
 RUN mkdir /app /run/php /src && cd /src && \
@@ -44,10 +48,6 @@ RUN mkdir /app /run/php /src && cd /src && \
   make install && \
   mkdir /etc/nginx/conf.d && \
   rm -rf /src
-
-RUN php -r "copy('https://getcomposer.org/installer', '/composer-setup.php');" && \
-  php /composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-  php -r "unlink('/composer-setup.php');"
 
 WORKDIR /app
 ENTRYPOINT ["docker-entrypoint.sh"]
