@@ -7,5 +7,6 @@ RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
   && echo "America/New_York" >  /etc/timezone \
   && mv /usr/local/bin/composer.phar /usr/local/bin/composer \
+  && chmod +x /usr/local/bin/composer \
   && apk del tzdata \
   && rm -rf /var/cache/apk/*

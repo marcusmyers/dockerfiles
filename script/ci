@@ -1,38 +1,76 @@
 #!/usr/bin/env php
 
 <?php
+require "vendor/autoload.php";
+use Illuminate\Support\Collection;
 
 class Dockerfile {
-  protected $file;
+    protected $file;
+    protected $arrFileContent;
 
-  public function __construct(String $filepath)
-  {
-    $this->file = $filepath;
-  }
+    public function __construct(String $filepath)
+    {
+        $this->file = $filepath;
+    }
 
-  public function dir()
-  {
-    return pathinfo($this->file, PATHINFO_DIRNAME);
-  }
+    public function dir()
+    {
+        return pathinfo($this->file, PATHINFO_DIRNAME);
+    }
 
-  public function image_tag()
-  {
-    return "marcusmyers/". ( strpos($this->dir(), "/") ? preg_replace("/\//", ":", $this->dir()) : $this->dir() . ":latest");
-  }
+    public function dependent_image()
+    {
+        $this->arrFileContent = file($this->file)[0];
+        return $this->arrFileContent;
+    }
 
-  public function build_push_image()
-  {
-    echo "RUNNING: docker build -t ". $this->image_tag() . " " . $this->dir() . "\n";
-    system("docker build -t ". $this->image_tag() . " " . $this->dir());
-    system("docker push " . $this->image_tag());
-  }
+    public function dependent_on_marcusmyers()
+    {
+        if(preg_match("/marcusmyers/", $this->dependent_image())){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function image_tag()
+    {
+        return "marcusmyers/". ( strpos($this->dir(), "/") ? preg_replace("/\//", ":", $this->dir()) : $this->dir() . ":latest");
+    }
+
+    public function clean()
+    {
+        system("docker rmi " . $this->image_tag());
+    }
+
+    public function build_push_image()
+    {
+        echo "RUNNING: docker build -t ". $this->image_tag() . " " . $this->dir() . "\n";
+        system("docker build -t ". $this->image_tag() . " " . $this->dir());
+        system("docker push " . $this->image_tag());
+    }
 }
 
-$dfiles = array_merge(glob('*/Dockerfile'), glob('*/*/Dockerfile'));
+$dfiles = Collection::make(array_merge(glob('*/Dockerfile'), glob('*/*/Dockerfile')));
 
-$dockerfiles = [];
+$dockerfiles = $dfiles->map(function ($file) {
+    return new Dockerfile($file);
+});
 
-foreach($dfiles as $file) {
-  $dockerfile = new Dockerfile($file);
-  $dockerfile->build_push_image();
+$marcusmyers_dependent_images = $dockerfiles->filter( function($file) {
+    return $file->dependent_on_marcusmyers();
+});
+
+$non_marcusmyers_dependencies = $dockerfiles->reject( function($file) {
+    return $file->dependent_on_marcusmyers();
+});
+
+foreach($non_marcusmyers_dependencies as $dockerfile) {
+    $dockerfile->build_push_image();
+    $dockerfile->clean();
+}
+
+foreach($marcusmyers_dependend_images as $dockerfile) {
+    $dockerfile->build_push_image();
+    $dockerfile->clean();
 }
