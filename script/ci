@@ -70,7 +70,7 @@ foreach($non_marcusmyers_dependencies as $dockerfile) {
     $dockerfile->clean();
 }
 
-foreach($marcusmyers_dependend_images as $dockerfile) {
+foreach($marcusmyers_dependent_images as $dockerfile) {
     $dockerfile->build_push_image();
     $dockerfile->clean();
 }
