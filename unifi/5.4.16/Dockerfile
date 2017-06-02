@@ -16,7 +16,7 @@ RUN apt-get -q update && \
     binutils \
     jsvc \
     openjdk-8-jre \
-    openjdk-8-jre-headlessi && \
+    openjdk-8-jre-headless && \
   apt-get -q clean && \
   rm -rf /var/lib/apt/lists/* && \
   curl -L -o unifi_sysvinit_all.deb $UNIFI_INSTALL_URL && \
