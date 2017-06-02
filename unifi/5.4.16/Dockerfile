@@ -5,7 +5,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
 
 RUN echo "deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti" >> /etc/apt/sources.list.d/200-unifi.list
 
-ENV UNIFI_INSTALL_URL=http://dl.ubnt.com/unifi/5.4.14/unifi_sysvinit_all.deb \
+ENV UNIFI_INSTALL_URL=http://dl.ubnt.com/unifi/5.4.16/unifi_sysvinit_all.deb \
     JAVA_MAX_HEAP_SIZE 512M
 
 # Install Supporting Packages
