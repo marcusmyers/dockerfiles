@@ -1,5 +1,7 @@
 {
     "require": {
-        "tightenco/collect": "^5.4"
+        "tightenco/collect": "^5.4",
+        "graze/parallel-process": "^0.4.0",
+        "graze/console-diff-renderer": "^0.6.1"
     }
 }

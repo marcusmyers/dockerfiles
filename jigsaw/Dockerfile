@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.4.1
+FROM marcusmyers/composer:1.4.2
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 ENV COMPOSER_HOME=/composer

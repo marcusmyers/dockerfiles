@@ -1,0 +1,3 @@
+disabled:
+  - phpdoc_align
+  - concat_without_spaces
