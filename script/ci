@@ -3,6 +3,10 @@
 <?php
 require "vendor/autoload.php";
 use Illuminate\Support\Collection;
+use Graze\ParallelProcess\Pool;
+use Graze\ParallelProcess\Table;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Process\Process;
 
 class Dockerfile {
     protected $file;
@@ -38,18 +42,13 @@ class Dockerfile {
         return "marcusmyers/". ( strpos($this->dir(), "/") ? preg_replace("/\//", ":", $this->dir()) : $this->dir() . ":latest");
     }
 
-    public function clean()
-    {
-        system("docker rmi " . $this->image_tag());
-    }
-
     public function build_push_image()
     {
-        echo "RUNNING: docker build -t ". $this->image_tag() . " " . $this->dir() . "\n";
-        system("docker build -t ". $this->image_tag() . " " . $this->dir());
-        system("docker push " . $this->image_tag());
+        return new Process("docker build -t ". $this->image_tag() . " " . $this->dir() . "&& docker push " . $this->image_tag(). " && docker rmi " . $this->image_tag());
     }
 }
+
+$output = new ConsoleOutput(ConsoleOutput::VERBOSITY_VERY_VERBOSE);
 
 $dfiles = Collection::make(array_merge(glob('*/Dockerfile'), glob('*/*/Dockerfile')));
 
@@ -65,12 +64,21 @@ $non_marcusmyers_dependencies = $dockerfiles->reject( function($file) {
     return $file->dependent_on_marcusmyers();
 });
 
-foreach($non_marcusmyers_dependencies as $dockerfile) {
-    $dockerfile->build_push_image();
-    $dockerfile->clean();
-}
+$pool1 = new Pool();
+$pool2 = new Pool();
 
-foreach($marcusmyers_dependent_images as $dockerfile) {
-    $dockerfile->build_push_image();
-    $dockerfile->clean();
-}
+$pool1->setMaxSimultaneous(4);
+$ppol2->setMaxSimultaneous(6);
+
+$table1 = new Table($output, $pool1);
+$table2 = new Table($output, $pool2);
+
+$non_marcusmyers_dependencies->each(function ($d) use ($table1) {
+  $table1->add($d->build_push_image());
+});
+$table1->run();
+
+$marcusmyers_dependent_images->each(function ($d) use ($table2) {
+  $table2->add($d->build_push_image());
+});
+$table2->run();

@@ -6,5 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
+    'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
+    'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Illuminate\\' => array($vendorDir . '/tightenco/collect/src/Illuminate'),
+    'Graze\\ParallelProcess\\' => array($vendorDir . '/graze/parallel-process/src'),
+    'Graze\\DiffRenderer\\' => array($vendorDir . '/graze/console-diff-renderer/src'),
+    'Graze\\DataStructure\\' => array($vendorDir . '/graze/data-structure/src'),
+    'Graze\\' => array($vendorDir . '/graze/sort/src'),
 );

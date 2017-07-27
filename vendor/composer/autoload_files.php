@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
+    '615a7b0773c3d9f154ce5ee0c7df3660' => $vendorDir . '/graze/sort/src/fn.php',
     '7ba3c774c30c8399e359b5ff7f3b943e' => $vendorDir . '/tightenco/collect/src/Illuminate/Support/helpers.php',
 );
