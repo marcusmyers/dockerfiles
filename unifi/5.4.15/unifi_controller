@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec /usr/bin/java -Xmx$JAVA_MAX_HEAP_SIZE -jar /usr/lib/unifi/lib/ace.jar $@

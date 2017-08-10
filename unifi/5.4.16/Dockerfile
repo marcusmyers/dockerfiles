@@ -33,4 +33,3 @@ WORKDIR /usr/lib/unifi/data
 
 ENTRYPOINT ["/bin/unifi_controller"]
 CMD ["start"]
-
