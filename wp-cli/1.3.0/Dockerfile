@@ -10,3 +10,5 @@ RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-
   && chmod +x /usr/local/bin/wp \
   && apk del tzdata \
   && rm -rf /var/cache/apk/*
+
+ENTRYPOINT [ "/usr/local/bin/wp" ]
