@@ -1,6 +1,6 @@
 FROM marcusmyers/ubuntu:16.04
 
-ADD https://getcomposer.org/download/1.4.2/composer.phar /usr/local/bin/
+ADD https://getcomposer.org/download/1.5.1/composer.phar /usr/local/bin/
 
 RUN mv /usr/local/bin/composer.phar /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer && \
