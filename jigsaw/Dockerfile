@@ -5,7 +5,8 @@ ENV COMPOSER_HOME=/composer
 
 RUN mkdir /composer \
     && mkdir /app \
-    && composer global require tightenco/jigsaw \
-    && export PATH=/composer/vendor/bin:$PATH
+    && composer global require tightenco/jigsaw
+
+ENV PATH="/composer/vendor/bin:${PATH}"
 
 WORKDIR /app
