@@ -11,4 +11,6 @@ RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-
   && apk del tzdata \
   && rm -rf /var/cache/apk/*
 
+LABEL io.whalebrew.name 'wp'
+
 ENTRYPOINT [ "/usr/local/bin/wp" ]
