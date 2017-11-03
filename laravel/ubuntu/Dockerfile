@@ -1,10 +1,9 @@
+FROM marcusmyers/composer:1.5.2 as composer
+
 FROM marcusmyers/ubuntu:16.04
 
-ADD https://getcomposer.org/download/1.5.1/composer.phar /usr/local/bin/
-
-RUN mv /usr/local/bin/composer.phar /usr/local/bin/composer && \
-    chmod +x /usr/local/bin/composer && \
-    curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+COPY --from=composer /usr/local/bin/composer /usr/local/bin/
+RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list && \
     add-apt-repository -y ppa:ondrej/php && \
     apt-get update -y && \

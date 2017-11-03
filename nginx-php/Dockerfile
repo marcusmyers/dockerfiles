@@ -1,14 +1,14 @@
+FROM marcusmyers/composer:1.5.2 as composer
+
 FROM marcusmyers/ubuntu:16.04
 MAINTAINER marcusmyers <marcusmyers@gmail.com>
 
 ENV PHP_CONF=/etc/php/7.0/fpm/php.ini \
     FPM_CONF=/etc/php/7.0/fpm/php-fpm.conf \
     FPM_POOL=/etc/php/7.0/fpm/pool.d/www.conf \
-    NGINX_VERSION=1.10.2 \
-    COMPOSER_VERSION=1.4.1
+    NGINX_VERSION=1.10.2
 
-ADD https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar /usr/local/bin/
-
+COPY --from=composer /usr/local/bin/composer /usr/local/bin/
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/default.conf.erb /etc/nginx/default.conf.erb
 COPY config/start /etc/nginx/start
