@@ -3,7 +3,7 @@ MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 ENV VERSION=1.3.0
 
-ADD https://github.com/wp-cli/wp-cli/releases/download/v${VERSION}/wp-cli-${VERSION.phar /usr/local/bin/wp
+ADD https://github.com/wp-cli/wp-cli/releases/download/v${VERSION}/wp-cli-${VERSION}.phar /usr/local/bin/wp
 
 RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-dev \
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
