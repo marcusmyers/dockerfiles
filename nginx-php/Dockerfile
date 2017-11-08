@@ -31,7 +31,6 @@ RUN apt-get -qq update && \
     ruby \
     supervisor && \
   apt-get -q clean && \
-  mv /usr/local/bin/composer.phar /usr/local/bin/composer && \
   rm -rf /var/lib/apt/list/*
 
 RUN mkdir /app /run/php /src && cd /src && \
