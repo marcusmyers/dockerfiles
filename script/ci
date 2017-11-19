@@ -11,10 +11,14 @@ use Symfony\Component\Process\Process;
 class Dockerfile {
     protected $file;
     protected $arrFileContent;
+    protected $arrVersions;
 
     public function __construct(String $filepath)
     {
         $this->file = $filepath;
+        if(file_exists($this->dir() . "/VERSIONS")) {
+            $this->arrVersions = file($this->dir()."/VERSIONS");
+        }
     }
 
     public function dir()
@@ -37,19 +41,35 @@ class Dockerfile {
         }
     }
 
-    public function image_tag()
+    public function image_tag($tag="")
     {
-        return "marcusmyers/". ( strpos($this->dir(), "/") ? preg_replace("/\//", ":", $this->dir()) : $this->dir() . ":latest");
+        if ($tag != "" ) {
+            return "marcusmyers/". basename($this->dir()) . ":" . trim($tag);
+        } else {
+            return "marcusmyers/". ( strpos($this->dir(), "/") ? preg_replace("/\//", ":", $this->dir()) : $this->dir() . ":latest");
+        }
     }
 
     public function build_push_image()
     {
-         return new Process("docker build -t ". $this->image_tag() . " " . $this->dir() . " && docker push " . $this->image_tag());
+        if(count($this->arrVersions) > 0) {
+            foreach($this->arrVersions as $version) {
+              return new Process("docker build --build-arg VERSION=". trim($version) ." -t " . $this->image_tag($version) . " " . $this->dir() . "&& docker push " . $this->image_tag());
+            }
+        } else {
+            return new Process("docker build -t ". $this->image_tag() . " " . $this->dir() . " && docker push " . $this->image_tag());
+        }
     }
 
     public function cleanup()
     {
-        system("docker rmi " . $this->image_tag());
+        if($this->arrVersions) {
+            foreach($this->arrVersions as $version) {
+                system("docker rmi " . $this->image_tag($version));
+            }
+        } else {
+            system("docker rmi ". $this->image_tag());
+        }
     }
 }
 
