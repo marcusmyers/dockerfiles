@@ -1,4 +1,4 @@
-FROM php:7.1-alpine
+FROM php:7.2-alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 LABEL io.whalebrew.name 'phpunit'

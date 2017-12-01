@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.5.2 as composer
+FROM marcusmyers/composer:1.5.4 as composer
 
 FROM marcusmyers/ubuntu:16.04
 
