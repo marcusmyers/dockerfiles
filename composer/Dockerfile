@@ -9,6 +9,7 @@ LABEL io.whalebrew.name 'composer'
 RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-dev \
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
   && echo "America/New_York" >  /etc/timezone \
+  && docker-php-ext-install zip \
   && chmod +x /usr/local/bin/composer \
   && apk del tzdata \
   && rm -rf /var/cache/apk/*
