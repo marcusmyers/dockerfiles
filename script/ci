@@ -54,7 +54,7 @@ class Dockerfile {
     {
         if(count($this->arrVersions) > 0) {
             foreach($this->arrVersions as $version) {
-              return new Process("docker build --build-arg VERSION=". trim($version) ." -t " . $this->image_tag($version) . " " . $this->dir() . "&& docker push " . $this->image_tag());
+              return new Process("docker build --build-arg VERSION=". trim($version) ." -t " . $this->image_tag($version) . " " . $this->dir() . " && docker push " . $this->image_tag($version));
             }
         } else {
             return new Process("docker build -t ". $this->image_tag() . " " . $this->dir() . " && docker push " . $this->image_tag());
