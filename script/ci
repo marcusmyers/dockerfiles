@@ -3,10 +3,6 @@
 <?php
 require "vendor/autoload.php";
 use Illuminate\Support\Collection;
-use Graze\ParallelProcess\Pool;
-use Graze\ParallelProcess\Table;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Process\Process;
 
 class Dockerfile {
     protected $file;
@@ -54,10 +50,10 @@ class Dockerfile {
     {
         if(count($this->arrVersions) > 0) {
             foreach($this->arrVersions as $version) {
-              return new Process("docker build --build-arg VERSION=". trim($version) ." -t " . $this->image_tag($version) . " " . $this->dir() . " && docker push " . $this->image_tag($version));
+              system("docker build --build-arg VERSION=". trim($version) ." -t " . $this->image_tag($version) . " " . $this->dir() . " && docker push " . $this->image_tag($version));
             }
         } else {
-            return new Process("docker build -t ". $this->image_tag() . " " . $this->dir() . " && docker push " . $this->image_tag());
+            system("docker build -t ". $this->image_tag() . " " . $this->dir() . " && docker push " . $this->image_tag());
         }
     }
 
@@ -73,8 +69,6 @@ class Dockerfile {
     }
 }
 
-$output = new ConsoleOutput(ConsoleOutput::VERBOSITY_VERY_VERBOSE);
-
 $dfiles = Collection::make(array_merge(glob('*/Dockerfile'), glob('*/*/Dockerfile')));
 
 $dockerfiles = $dfiles->map(function ($file) {
@@ -89,25 +83,17 @@ $non_marcusmyers_dependencies = $dockerfiles->reject( function($file) {
     return $file->dependent_on_marcusmyers();
 });
 
-$pool1 = new Pool();
-$pool2 = new Pool();
-
-$table1 = new Table($output, $pool1);
-$table2 = new Table($output, $pool2);
-
 echo "INFO: Building non-dependent images. . .\n";
 $non_marcusmyers_dependencies->each(function ($d) use ($table1) {
-    $table1->add($d->build_push_image());
+    $d->build_push_image();
 });
-$table1->run();
 
 sleep(5);
 
 echo "INFO: Building images with dependencies. . .\n";
 $marcusmyers_dependent_images->each(function ($d) use ($table2) {
-    $table2->add($d->build_push_image());
+    $d->build_push_image();
 });
-$table2->run();
 
 echo "INFO: Cleaning up all images. . .\n";
 $dockerfiles->each(function ($f) {
