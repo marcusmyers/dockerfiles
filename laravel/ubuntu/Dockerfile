@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.5.4 as composer
+FROM marcusmyers/composer:1.6.3 as composer
 
 FROM marcusmyers/ubuntu:16.04
 
@@ -14,6 +14,7 @@ RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - &
       php7.2-imagick \
       php7.2-mbstring \
       mysql-client \
+      php7.2-mcrypt \
       php7.2-curl \
       php7.2-zip \
       php7.2-exif \
