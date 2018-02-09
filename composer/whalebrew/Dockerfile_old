@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.5.2
+FROM marcusmyers/composer:1.6.3
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 LABEL io.whalebrew.name 'composer'

@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.5.4 as composer
+FROM marcusmyers/composer:1.6.3 as composer
 
 FROM marcusmyers/ubuntu:16.04
 
@@ -8,21 +8,21 @@ RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - &
     add-apt-repository -y ppa:ondrej/php && \
     apt-get update -y && \
     apt-get -f install && \
-    apt-get -y install php7.1 \
+    apt-get -y install php7.2 \
       ffmpeg \
-      php7.1-gd \
-      php7.1-imagick \
-      php7.1-mbstring \
+      php7.2-gd \
+      php7.2-imagick \
+      php7.2-mbstring \
       mysql-client \
-      php7.1-mcrypt \
-      php7.1-curl \
-      php7.1-zip \
-      php7.1-exif \
-      php7.1-dom \
-      php7.1-xml \
-      php7.1-pdo \
-      php7.1-mysql \
-      php7.1-json \
+      php7.2-mcrypt \
+      php7.2-curl \
+      php7.2-zip \
+      php7.2-exif \
+      php7.2-dom \
+      php7.2-xml \
+      php7.2-pdo \
+      php7.2-mysql \
+      php7.2-json \
       google-chrome-stable && \
     apt-get -q clean && \
     rm -rf /var/lib/apt/lists/*

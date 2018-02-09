@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.5.2 as composer
+FROM marcusmyers/composer:1.6.3 as composer
 
 FROM marcusmyers/ubuntu:16.04
 MAINTAINER marcusmyers <marcusmyers@gmail.com>
