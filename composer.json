@@ -1,5 +1,7 @@
 {
-    "require": {
-        "tightenco/collect": "^5.4",
-    }
+  "name": "dockerfiles",
+  "description": "My Dockerfiles",
+  "require": {
+        "tightenco/collect": "^5.4"
+  }
 }
