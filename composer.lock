@@ -405,16 +405,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.4.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+                "reference": "3296adf6a6454a050679cde90f95350ad604b171"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3296adf6a6454a050679cde90f95350ad604b171",
+                "reference": "3296adf6a6454a050679cde90f95350ad604b171",
                 "shasum": ""
             },
             "require": {
@@ -426,7 +426,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.8-dev"
                 }
             },
             "autoload": {
@@ -460,7 +460,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2018-04-26T10:06:28+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -568,7 +568,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.0.9",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -637,16 +637,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.6.23",
+            "version": "v5.6.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "0954fc3ca147a7d727d807e15113daba4a08c810"
+                "reference": "bfd7ee16ae285b8e4589e2f9fc60b5a2082b7d68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/0954fc3ca147a7d727d807e15113daba4a08c810",
-                "reference": "0954fc3ca147a7d727d807e15113daba4a08c810",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/bfd7ee16ae285b8e4589e2f9fc60b5a2082b7d68",
+                "reference": "bfd7ee16ae285b8e4589e2f9fc60b5a2082b7d68",
                 "shasum": ""
             },
             "require": {
@@ -683,7 +683,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2018-05-22T17:57:22+00:00"
+            "time": "2018-06-04T18:27:56+00:00"
         }
     ],
     "packages-dev": [],
