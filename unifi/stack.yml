@@ -1,8 +1,8 @@
-version: "3.2"
+version: "3.3"
 
 services:
   controller:
-    image: marcusmyers/unifi:5.6.30
+    image: marcusmyers/unifi:5.7.23
     volumes:
       - type: volume
         source: wifi-data

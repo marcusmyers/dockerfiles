@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  munki:
+    image: marcusmyers/squirrel
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_S3_BUCKET:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_REGION: "us-east-1"
+      BASIC_AUTH:
+    deploy:
+      replicas: 2
+      update_config:
+        delay: 10s
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 5
+
