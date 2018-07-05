@@ -5,6 +5,7 @@ ARG VERSION
 ADD https://getcomposer.org/download/${VERSION}/composer.phar /usr/local/bin/composer
 
 LABEL io.whalebrew.name 'composer'
+LABEL io.whalebrew.config.volumes '["~/.composer:$HOME/.composer"]'
 
 RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-dev \
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
