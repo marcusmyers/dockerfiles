@@ -9,6 +9,8 @@ services:
       AWS_SECRET_ACCESS_KEY:
       AWS_REGION: "us-east-1"
       BASIC_AUTH:
+    ports:
+      - "8001:8080"
     deploy:
       replicas: 2
       update_config:
