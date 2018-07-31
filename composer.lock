@@ -7,403 +7,6 @@
     "content-hash": "150c8313754e4a89fb178256ddfabe32",
     "packages": [
         {
-            "name": "graze/console-diff-renderer",
-            "version": "0.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/graze/console-diff-renderer.git",
-                "reference": "42eb3f66ff13be4acb010c9a6c770b721fdadc4d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/graze/console-diff-renderer/zipball/42eb3f66ff13be4acb010c9a6c770b721fdadc4d",
-                "reference": "42eb3f66ff13be4acb010c9a6c770b721fdadc4d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5 | ^7.0",
-                "symfony/console": "^2.8 | ^3.2"
-            },
-            "require-dev": {
-                "graze/standards": "^1.0",
-                "mockery/mockery": "^0.9.9",
-                "phpunit/phpunit": "^4.6 | ^5.2",
-                "squizlabs/php_codesniffer": "^2.6,!=2.8.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Graze\\DiffRenderer\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Harry Bragg",
-                    "email": "harry.bragg@graze.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Graze Developers",
-                    "email": "developers@graze.com",
-                    "homepage": "http://www.graze.com",
-                    "role": "Development Team"
-                }
-            ],
-            "description": "only write output to a console that has changed",
-            "homepage": "https://github.com/graze/console-diff-renderer",
-            "keywords": [
-                "console-diff-renderer",
-                "graze"
-            ],
-            "time": "2017-06-29T15:21:43+00:00"
-        },
-        {
-            "name": "graze/data-structure",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/graze/data-structure.git",
-                "reference": "cebaa76aacdea90037a33d8a87aab6641891ea8f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/graze/data-structure/zipball/cebaa76aacdea90037a33d8a87aab6641891ea8f",
-                "reference": "cebaa76aacdea90037a33d8a87aab6641891ea8f",
-                "shasum": ""
-            },
-            "require": {
-                "graze/sort": "~2.0",
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "adlawson/timezone": "~1.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Graze\\DataStructure\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graze tech team",
-                    "homepage": "https://github.com/graze/data-structure/graphs/contributors"
-                }
-            ],
-            "description": "Data collections and containers",
-            "homepage": "https://github.com/graze/data-structure",
-            "keywords": [
-                "array",
-                "collection",
-                "container",
-                "data",
-                "filter",
-                "map",
-                "parameters",
-                "reduce",
-                "structure"
-            ],
-            "time": "2015-11-20T12:13:51+00:00"
-        },
-        {
-            "name": "graze/parallel-process",
-            "version": "0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/graze/parallel-process.git",
-                "reference": "23d19d9334fdba8b1ab0bf587ae48b3f180d7403"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/graze/parallel-process/zipball/23d19d9334fdba8b1ab0bf587ae48b3f180d7403",
-                "reference": "23d19d9334fdba8b1ab0bf587ae48b3f180d7403",
-                "shasum": ""
-            },
-            "require": {
-                "graze/data-structure": "^2.0",
-                "php": "^5.5 | ^7.0",
-                "symfony/process": "^2.8 | ^3.2"
-            },
-            "require-dev": {
-                "graze/console-diff-renderer": "^0.6.1",
-                "graze/standards": "^1.0",
-                "mockery/mockery": "^0.9.9",
-                "phpunit/phpunit": "^4.2 | ^5.2",
-                "squizlabs/php_codesniffer": "^2.9",
-                "symfony/console": "^3.1"
-            },
-            "suggest": {
-                "graze/console-diff-renderer": "To use the Table efficiently",
-                "symfony/console": "To use the Table to print current runs"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Graze\\ParallelProcess\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Harry Bragg",
-                    "email": "harry.bragg@graze.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Graze Developers",
-                    "email": "developers@graze.com",
-                    "homepage": "http://www.graze.com",
-                    "role": "Development Team"
-                }
-            ],
-            "description": "run a pool of processes simultaneously",
-            "homepage": "https://github.com/graze/parallel-process",
-            "keywords": [
-                "graze",
-                "parallel-process"
-            ],
-            "time": "2017-06-30T14:38:57+00:00"
-        },
-        {
-            "name": "graze/sort",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/graze/sort.git",
-                "reference": "50f0896363f177f68be248d7bad9eb0c2f7f666c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/graze/sort/zipball/50f0896363f177f68be248d7bad9eb0c2f7f666c",
-                "reference": "50f0896363f177f68be248d7bad9eb0c2f7f666c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "adlawson/timezone": "~1.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/fn.php"
-                ],
-                "psr-4": {
-                    "Graze\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graze tech team",
-                    "homepage": "https://github.com/graze/sort/graphs/contributors"
-                }
-            ],
-            "description": "A collection of array sorting transforms and functions",
-            "homepage": "https://github.com/graze/sort",
-            "keywords": [
-                "array",
-                "collection",
-                "list",
-                "order",
-                "ordered",
-                "schwartzian",
-                "sort",
-                "sorting",
-                "transform"
-            ],
-            "time": "2014-09-23T17:01:23+00:00"
-        },
-        {
-            "name": "psr/log",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/log.git",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for logging libraries",
-            "homepage": "https://github.com/php-fig/log",
-            "keywords": [
-                "log",
-                "psr",
-                "psr-3"
-            ],
-            "time": "2016-10-10T12:19:37+00:00"
-        },
-        {
-            "name": "symfony/console",
-            "version": "v3.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/console.git",
-                "reference": "a97e45d98c59510f085fa05225a1acb74dfe0546"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a97e45d98c59510f085fa05225a1acb74dfe0546",
-                "reference": "a97e45d98c59510f085fa05225a1acb74dfe0546",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/debug": "~2.8|~3.0",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "conflict": {
-                "symfony/dependency-injection": "<3.3"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~3.3",
-                "symfony/dependency-injection": "~3.3",
-                "symfony/event-dispatcher": "~2.8|~3.0",
-                "symfony/filesystem": "~2.8|~3.0",
-                "symfony/http-kernel": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
-            },
-            "suggest": {
-                "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": "",
-                "symfony/filesystem": "",
-                "symfony/process": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Console\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Console Component",
-            "homepage": "https://symfony.com",
-            "time": "2017-07-03T13:19:36+00:00"
-        },
-        {
-            "name": "symfony/debug",
-            "version": "v3.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/debug.git",
-                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/63b85a968486d95ff9542228dc2e4247f16f9743",
-                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "psr/log": "~1.0"
-            },
-            "conflict": {
-                "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
-            },
-            "require-dev": {
-                "symfony/http-kernel": "~2.8|~3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Debug\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Debug Component",
-            "homepage": "https://symfony.com",
-            "time": "2017-07-05T13:02:37+00:00"
-        },
-        {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.8.0",
             "source": {
@@ -518,66 +121,17 @@
             "time": "2018-04-26T10:06:28+00:00"
         },
         {
-            "name": "symfony/process",
-            "version": "v3.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/process.git",
-                "reference": "07432804942b9f6dd7b7377faf9920af5f95d70a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/07432804942b9f6dd7b7377faf9920af5f95d70a",
-                "reference": "07432804942b9f6dd7b7377faf9920af5f95d70a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Process\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Process Component",
-            "homepage": "https://symfony.com",
-            "time": "2017-07-13T13:05:09+00:00"
-        },
-        {
             "name": "symfony/var-dumper",
-            "version": "v4.0.13",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "fe60067f80127f45a0564f1d30e0c1d6f3854654"
+                "reference": "9f882aed43f364de1d43038e8fb39703c577afc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/fe60067f80127f45a0564f1d30e0c1d6f3854654",
-                "reference": "fe60067f80127f45a0564f1d30e0c1d6f3854654",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/9f882aed43f364de1d43038e8fb39703c577afc1",
+                "reference": "9f882aed43f364de1d43038e8fb39703c577afc1",
                 "shasum": ""
             },
             "require": {
@@ -586,20 +140,26 @@
                 "symfony/polyfill-php72": "~1.5"
             },
             "conflict": {
-                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
+                "symfony/console": "<3.4"
             },
             "require-dev": {
                 "ext-iconv": "*",
+                "symfony/process": "~3.4|~4.0",
                 "twig/twig": "~1.34|~2.4"
             },
             "suggest": {
                 "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
-                "ext-intl": "To show region name in time zone dump"
+                "ext-intl": "To show region name in time zone dump",
+                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
             },
+            "bin": [
+                "Resources/bin/var-dump-server"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -633,7 +193,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2018-07-05T11:53:42+00:00"
+            "time": "2018-07-05T11:54:23+00:00"
         },
         {
             "name": "tightenco/collect",

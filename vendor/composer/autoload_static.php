@@ -8,75 +8,41 @@ class ComposerStaticInit78d28fc0e483873db15e209d90aa524b
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '615a7b0773c3d9f154ce5ee0c7df3660' => __DIR__ . '/..' . '/graze/sort/src/fn.php',
-        '7ba3c774c30c8399e359b5ff7f3b943e' => __DIR__ . '/..' . '/tightenco/collect/src/Illuminate/Support/helpers.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'fe62ba7e10580d903cc46d808b5961a4' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/helpers.php',
+        'caf31cc6ec7cf2241cb6f12c226c3846' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/alias.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Tightenco\\Collect\\' => 18,
+        ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Component\\Process\\' => 26,
-            'Symfony\\Component\\Debug\\' => 24,
-            'Symfony\\Component\\Console\\' => 26,
-        ),
-        'P' => 
-        array (
-            'Psr\\Log\\' => 8,
-        ),
-        'I' => 
-        array (
-            'Illuminate\\' => 11,
-        ),
-        'G' => 
-        array (
-            'Graze\\ParallelProcess\\' => 22,
-            'Graze\\DiffRenderer\\' => 19,
-            'Graze\\DataStructure\\' => 20,
-            'Graze\\' => 6,
+            'Symfony\\Component\\VarDumper\\' => 28,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tightenco\\Collect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tightenco/collect/src/Collect',
+        ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Component\\Process\\' => 
+        'Symfony\\Component\\VarDumper\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/process',
-        ),
-        'Symfony\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/debug',
-        ),
-        'Symfony\\Component\\Console\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/console',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
-        'Illuminate\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tightenco/collect/src/Illuminate',
-        ),
-        'Graze\\ParallelProcess\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/graze/parallel-process/src',
-        ),
-        'Graze\\DiffRenderer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/graze/console-diff-renderer/src',
-        ),
-        'Graze\\DataStructure\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/graze/data-structure/src',
-        ),
-        'Graze\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/graze/sort/src',
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
     );
 
