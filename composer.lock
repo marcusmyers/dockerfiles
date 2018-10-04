@@ -122,16 +122,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.1.4",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "a05426e27294bba7b0226ffc17dd01a3c6ef9777"
+                "reference": "60319b45653580b0cdacca499344577d87732f16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/a05426e27294bba7b0226ffc17dd01a3c6ef9777",
-                "reference": "a05426e27294bba7b0226ffc17dd01a3c6ef9777",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/60319b45653580b0cdacca499344577d87732f16",
+                "reference": "60319b45653580b0cdacca499344577d87732f16",
                 "shasum": ""
             },
             "require": {
@@ -193,20 +193,20 @@
                 "debug",
                 "dump"
             ],
-            "time": "2018-08-02T09:24:26+00:00"
+            "time": "2018-10-02T16:36:10+00:00"
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.7.6",
+            "version": "v5.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "4d1fdf5d98c4fc9f905e9e3a1805a0df8cb71101"
+                "reference": "521da49bcdb6c54f4ff8b251855b0ddd2da87c76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/4d1fdf5d98c4fc9f905e9e3a1805a0df8cb71101",
-                "reference": "4d1fdf5d98c4fc9f905e9e3a1805a0df8cb71101",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/521da49bcdb6c54f4ff8b251855b0ddd2da87c76",
+                "reference": "521da49bcdb6c54f4ff8b251855b0ddd2da87c76",
                 "shasum": ""
             },
             "require": {
@@ -243,7 +243,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2018-09-25T21:20:45+00:00"
+            "time": "2018-10-03T13:06:05+00:00"
         }
     ],
     "packages-dev": [],
