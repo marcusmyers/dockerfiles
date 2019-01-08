@@ -10,7 +10,7 @@ ADD https://getcomposer.org/download/${VERSION}/composer.phar /usr/local/bin/com
 LABEL io.whalebrew.name 'composer'
 LABEL io.whalebrew.config.volumes '["~/.composer:/.composer"]'
 
-RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-dev git \
+RUN apk add --update tzdata freetype-dev libjpeg-turbo-dev libpng-dev libmcrypt-dev git libzip-dev \
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
   && echo "America/New_York" >  /etc/timezone \
   && docker-php-ext-install zip \
