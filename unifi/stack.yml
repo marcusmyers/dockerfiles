@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   controller:
-    image: marcusmyers/unifi:5.7.23
+    image: marcusmyers/unifi:5.9.29
     volumes:
       - type: volume
         source: wifi-data
@@ -16,6 +16,9 @@ services:
       - "8880:8880"
       - "3478:3478/udp"
     deploy:
+      placement:
+        constraints:
+          - node.labels.unifi == true
       replicas: 1
       update_config:
         delay: 10s
