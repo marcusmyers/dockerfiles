@@ -1,4 +1,4 @@
-FROM php:7.2-alpine
+FROM php:7.3-alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 ARG VERSION
 
