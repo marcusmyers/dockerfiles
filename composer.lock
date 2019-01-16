@@ -198,16 +198,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.7.19",
+            "version": "v5.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "b963d48b9aab0029fddf3629a4e11f063469c6ea"
+                "reference": "62ae82d8a71015981ac1ac862f59a63eb732c843"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/b963d48b9aab0029fddf3629a4e11f063469c6ea",
-                "reference": "b963d48b9aab0029fddf3629a4e11f063469c6ea",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/62ae82d8a71015981ac1ac862f59a63eb732c843",
+                "reference": "62ae82d8a71015981ac1ac862f59a63eb732c843",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2018-12-19T23:16:40+00:00"
+            "time": "2019-01-15T17:02:30+00:00"
         }
     ],
     "packages-dev": [],
