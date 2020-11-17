@@ -2,6 +2,6 @@
   "name": "dockerfiles",
   "description": "My Dockerfiles",
   "require": {
-        "tightenco/collect": "^7.19"
+        "tightenco/collect": "^8.14"
   }
 }
