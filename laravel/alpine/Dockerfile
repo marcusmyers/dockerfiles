@@ -1,4 +1,4 @@
-FROM marcusmyers/composer:1.6.5
+FROM marcusmyers/composer:2.3.6
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
 RUN apk add --update curl libcurl libxml2-dev libxml2 ffmpeg chromium mysql-client \

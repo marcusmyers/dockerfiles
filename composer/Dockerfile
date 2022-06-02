@@ -1,4 +1,4 @@
-FROM php:7.3-alpine
+FROM php:8.1-cli-alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 ARG VERSION
 

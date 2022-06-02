@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  controller:
+    image: marcusmyers/unifi:5.10.17
+    volumes:
+      - "/data/data:/usr/lib/unifi/data"
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "6879:6879"
+      - "8443:8443"
+      - "8843:8843"
+      - "8880:8880"
+      - "3478:3478/udp"
+    deploy:
+      placement:
+        constraints:
+          - node.labels.unifi == true
+      replicas: 1
+      update_config:
+        delay: 10s
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 5
