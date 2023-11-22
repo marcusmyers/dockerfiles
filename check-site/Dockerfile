@@ -1,8 +1,8 @@
 FROM cgr.dev/chainguard/php:latest
 
-ENV WEBSITE_CHECK="https://pulse.laravel.com/" \
- NTFY_SERVER_PUBLISH="https://ntfy.myersfam.me/bandm_alerts" \
- MESSAGE="Laravel Pulse is available!!!" \
+ENV WEBSITE_CHECK="https://www.laravel.com/" \
+ NTFY_SERVER_PUBLISH="https://ntfy.sh/alerts" \
+ MESSAGE="Site is available!!!" \
  TIMEZONE="America\New_York"
 
 COPY ./check_site.php /app/
