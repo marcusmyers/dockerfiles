@@ -1,6 +1,7 @@
 <?php
 
 $on_network=false;
+$debug=getenv('DEBUG');
 
 function check_device() {
   exec("ping -c 4 ".getenv('DEVICE_IP')."", $output, $status);
@@ -24,10 +25,15 @@ while(true) {
     $on_network = true;
     notify();
   } elseif ($on_network) {
-    echo "Device is already on the network - ". date('m/d/Y g:i a')."\n";
+    if ($debug) {
+      echo "Device is already on the network - ". date('m/d/Y g:i a')."\n";
+    }
   } else {
     $on_network = false;
-    echo "Device not on the network  - ". date('m/d/Y g:i a')."\n";
+    if ($debug) {
+      echo "Device not on the network  - ". date('m/d/Y g:i a')."\n";
+    }
+
     sleep(60);
   }
 }

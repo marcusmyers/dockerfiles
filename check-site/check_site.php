@@ -1,6 +1,7 @@
 <?php
 
 $current_hash=check_hash();
+$debug=getenv('DEBUG');
 
 function check_hash() {
   $h = fopen(getenv('WEBSITE_CHECK'), 'r');
@@ -26,7 +27,10 @@ function notify() {
 date_default_timezone_set(getenv('TIMEZONE'));
 
 while($current_hash==check_hash()) {
-  echo "Check hash is: ". check_hash() . " - ". date('m/d/Y g:i a')."\n";
+  if ($debug) {
+    echo "Check hash is: ". check_hash() . " - ". date('m/d/Y g:i a')."\n";
+  }
+
   sleep(60);
 }
 
